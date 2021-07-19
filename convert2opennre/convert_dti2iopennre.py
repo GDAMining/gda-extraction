@@ -1,16 +1,18 @@
 import json
 
+from pathlib import Path
 
-with open('./benchmark/dti/train.json', 'r') as trf:
+parent_dir = Path(__file__).parent
+with open(parent_dir + '/benchmark/dti/train.json', 'r') as trf:
     train = json.load(trf)
 
-with open('./benchmark/dti/valid.json', 'r') as vdf:
+with open(parent_dir + '/benchmark/dti/valid.json', 'r') as vdf:
     valid = json.load(vdf)
 
-with open('./benchmark/dti/test.json', 'r') as ttf:
+with open(parent_dir + '/benchmark/dti/test.json', 'r') as ttf:
     test = json.load(ttf)
 
-with open('./benchmark/dti/dti_train.txt', 'w') as trout:
+with open(parent_dir + '/benchmark/dti/dti_train.txt', 'w') as trout:
     for it in train:
         head_start = it['sentence'].find(it['head']['word'])
         assert head_start != -1
@@ -23,7 +25,7 @@ with open('./benchmark/dti/dti_train.txt', 'w') as trout:
         json.dump(instance, trout)
         trout.write('\n')
 
-with open('./benchmark/dti/dti_val.txt', 'w') as dvout:
+with open(parent_dir + '/benchmark/dti/dti_val.txt', 'w') as dvout:
     for it in valid:
         head_start = it['sentence'].find(it['head']['word'])
         assert head_start != -1
@@ -36,7 +38,7 @@ with open('./benchmark/dti/dti_val.txt', 'w') as dvout:
         json.dump(instance, dvout)
         dvout.write('\n')
 
-with open('./benchmark/dti/dti_test.txt', 'w') as ttout:
+with open(parent_dir + '/benchmark/dti/dti_test.txt', 'w') as ttout:
     for it in test:
         head_start = it['sentence'].find(it['head']['word'])
         assert head_start != -1
