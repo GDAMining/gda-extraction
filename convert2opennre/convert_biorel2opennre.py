@@ -1,16 +1,18 @@
 import json
 
+from pathlib import Path
 
-with open('./benchmark/biorel/train.json', 'r') as trf:
+parent_dir = Path(__file__).parent
+with open(parent_dir + '/benchmark/biorel/train.json', 'r') as trf:
     train = json.load(trf)
 
-with open('./benchmark/biorel/dev.json', 'r') as vdf:
+with open(parent_dir + '/benchmark/biorel/dev.json', 'r') as vdf:
     valid = json.load(vdf)
 
-with open('./benchmark/biorel/test.json', 'r') as ttf:
+with open(parent_dir + '/benchmark/biorel/test.json', 'r') as ttf:
     test = json.load(ttf)
 
-with open('./benchmark/biorel/biorel_train.txt', 'w') as trout:
+with open(parent_dir + '/benchmark/biorel/biorel_train.txt', 'w') as trout:
     for it in train:
         instance = {'text': it['sentence'],
                     'relation': it['relation'],
@@ -19,7 +21,7 @@ with open('./benchmark/biorel/biorel_train.txt', 'w') as trout:
         json.dump(instance, trout)
         trout.write('\n')
 
-with open('./benchmark/biorel/biorel_val.txt', 'w') as dvout:
+with open(parent_dir + '/benchmark/biorel/biorel_val.txt', 'w') as dvout:
     for it in valid:
         instance = {'text': it['sentence'],
                     'relation': it['relation'],
@@ -28,7 +30,7 @@ with open('./benchmark/biorel/biorel_val.txt', 'w') as dvout:
         json.dump(instance, dvout)
         dvout.write('\n')
 
-with open('./benchmark/biorel/biorel_test.txt', 'w') as ttout:
+with open(parent_dir + '/benchmark/biorel/biorel_test.txt', 'w') as ttout:
     for it in test:
         instance = {'text': it['sentence'],
                     'relation': it['relation'],
