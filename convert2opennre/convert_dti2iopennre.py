@@ -1,13 +1,13 @@
 import json
 
 
-with open('./data/dti/train.json', 'r') as trf:
+with open('./benchmark/dti/train.json', 'r') as trf:
     train = json.load(trf)
 
-with open('./data/dti/valid.json', 'r') as vdf:
+with open('./benchmark/dti/valid.json', 'r') as vdf:
     valid = json.load(vdf)
 
-with open('./data/dti/test.json', 'r') as ttf:
+with open('./benchmark/dti/test.json', 'r') as ttf:
     test = json.load(ttf)
 
 with open('./benchmark/dti/dti_train.txt', 'w') as trout:
