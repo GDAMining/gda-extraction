@@ -1,13 +1,13 @@
 import json
 
 
-with open('./data/biorel/train.json', 'r') as trf:
+with open('./benchmark/biorel/train.json', 'r') as trf:
     train = json.load(trf)
 
-with open('./data/biorel/dev.json', 'r') as vdf:
+with open('./benchmark/biorel/dev.json', 'r') as vdf:
     valid = json.load(vdf)
 
-with open('./data/biorel/test.json', 'r') as ttf:
+with open('./benchmark/biorel/test.json', 'r') as ttf:
     test = json.load(ttf)
 
 with open('./benchmark/biorel/biorel_train.txt', 'w') as trout:
