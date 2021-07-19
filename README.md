@@ -1,0 +1,2 @@
+# gda-extraction
+This repository contains the source code to train and test Biomedical Relation Extraction (BioRE) models on GDAb and GDAt datasets. GDAb and GDAt are large-scale, distantly supervised, and manually enhanced datasets for Gene-Disease Association (GDA) extraction. The repository also contains scripts to compute datasets statistics and to convert other BioRE datasets in the required format.
