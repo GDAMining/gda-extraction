@@ -34,12 +34,12 @@ python setup.py develop
 
 Users can go into the `benchmark` folder and download GDAb and GDAt datasets using the script `download_GDA_datasets.sh`. If interested in running models on BioRel and DTI, users can download and store these datasets as follows.
 
-<b>BioRel</b>: \n
-Download in `/benchmark/biorel/` the `train.json`, `dev.json`, `test.json`, and `relation2id.json` files from https://bit.ly/biorel_dataset. \n
+<b>BioRel</b>: <br />
+Download in `/benchmark/biorel/` the `train.json`, `dev.json`, `test.json`, and `relation2id.json` files from https://bit.ly/biorel_dataset. <br />
 Then, run the `convert_biorel2opennre.sh` file in `/convert2opennre`.
 
-<b>DTI</b>: \n
-Download in `/benchmark/dti/` the `train.json`, `valid.json`, and `test.json` files from https://cloud.tsinghua.edu.cn/d/c9651d22d3f94fb7a4f8/. \n 
+<b>DTI</b>: <br />
+Download in `/benchmark/dti/` the `train.json`, `valid.json`, and `test.json` files from https://cloud.tsinghua.edu.cn/d/c9651d22d3f94fb7a4f8/. <br />
 Then, run the `convert_dti2opennre.sh` file in `/convert2opennre`.
 
 ## Pretrain
