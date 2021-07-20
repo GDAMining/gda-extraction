@@ -81,7 +81,7 @@ python train_cnn.py \
     --max_epoch 20 \
 ```
 
-Results are reported in terms of Area Under the Precision-Recall Curve (AUPRC) or (micro) F1 score.
+Results are reported in terms of Area Under the Precision-Recall Curve (AUPRC) and (micro) F1 score.
 
 ## Cite
 
