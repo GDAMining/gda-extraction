@@ -1,21 +1,7 @@
 # GDA Extraction
 This repository contains the source code to train and test Biomedical Relation Extraction (BioRE) models on GDAb and GDAt datasets. GDAb and GDAt are large-scale, distantly supervised, and manually enhanced datasets for Gene-Disease Association (GDA) extraction. In addition, the repository contains scripts to compute datasets statistics and to convert other BioRE datasets in the required format. GDAb and GDAt datasets are available at: http://doi.org/10.5281/zenodo.5113853.
 
-## How to Cite
 
-A good research work is always accompanied by a thorough and faithful reference. If you use or extend our work, please cite the following paper:
-
-```
-@inproceedings{han-etal-2019-opennre,
-    title = "{O}pen{NRE}: An Open and Extensible Toolkit for Neural Relation Extraction",
-    author = "Han, Xu and Gao, Tianyu and Yao, Yuan and Ye, Deming and Liu, Zhiyuan and Sun, Maosong",
-    booktitle = "Proceedings of EMNLP-IJCNLP: System Demonstrations",
-    year = "2019",
-    url = "https://www.aclweb.org/anthology/D19-3029",
-    doi = "10.18653/v1/D19-3029",
-    pages = "169--174"
-}
-```
 
 ### Using Git Repository
 
@@ -110,3 +96,33 @@ python example/train_supervised_bert.py \
 ```
 
 We provide many options in the example training code and you can check them out for detailed instructions.
+
+## How to Cite
+
+If you use or extend our work, please cite the following papers:
+
+```
+@inproceedings{han-etal-2019-opennre,
+    title = "{O}pen{NRE}: An Open and Extensible Toolkit for Neural Relation Extraction",
+    author = "Han, Xu and Gao, Tianyu and Yao, Yuan and Ye, Deming and Liu, Zhiyuan and Sun, Maosong",
+    booktitle = "Proceedings of EMNLP-IJCNLP: System Demonstrations",
+    year = "2019",
+    url = "https://www.aclweb.org/anthology/D19-3029",
+    doi = "10.18653/v1/D19-3029",
+    pages = "169--174"
+}
+```
+
+```
+@article{hong_etal-2020-bere,
+    title = "A novel machine learning framework for automated biomedical relation extraction from large-scale literature repositories",
+	author = "L. Hong and J. Lin and S. Li and F. Wan and H. Yang and T. Jiang and D. Zhao and J. Zeng},
+	journal = "Nature Machine Intelligence",
+    year = "2020",
+    url = "https://www.nature.com/articles/s42256-020-0189-y",
+    doi = "10.1038/s42256-020-0189-y",
+	volume = "2",
+	pages = "347--355",
+	
+}
+```
