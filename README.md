@@ -1,14 +1,12 @@
 # GDA Extraction
 This repository contains the source code to train and test Biomedical Relation Extraction (BioRE) models on GDAb and GDAt datasets. GDAb and GDAt are large-scale, distantly supervised, and manually enhanced datasets for Gene-Disease Association (GDA) extraction. In addition, the repository contains scripts to compute datasets statistics and to convert other BioRE datasets in the required format. GDAb and GDAt datasets are available at: http://doi.org/10.5281/zenodo.5113853.
 
-
-
-### Using Git Repository
+### Usage
 
 Clone this repository
 
 ```bash
-git clone https://github.com/thunlp/OpenNRE.git
+git clone https://github.com/NanoGDA/gda-extraction.git
 ```
 
 Then install all the requirements:
@@ -19,17 +17,28 @@ pip install -r requirements.txt
 
 **Note**: Please choose appropriate PyTorch version based on your machine (related to your CUDA version). For details, refer to https://pytorch.org/. 
 
-Then install the package with 
+Then install the OpenNRE package with 
 ```
+cd ./OpenNRE
 python setup.py install 
 ```
 
-If you also want to modify the code, run this:
+If users also want to modify the code, run this:
 ```
+cd ./OpenNRE
 python setup.py develop
 ```
 
-Note that we have excluded all data and pretrain files for fast deployment. You can manually download them by running scripts in the ``benchmark`` and ``pretrain`` folders. For example, if you want to download FewRel dataset, you can run
+## Datasets 
+
+Users can go into the `benchmark` folder and download GDAb and GDAt datasets using the script `download_GDA_datasets.sh`. If interested in running models on BioRel and DTI, users can download and store them as follows.
+
+BioRel: download in `/benchmark/biorel/` the `train.json`, `dev.json`, `test.json`, and `relation2id.json` files from https://bit.ly/biorel_dataset. Then, run the `convert_biorel2opennre.sh` file in `/convert2opennre`.
+
+DTI: download in `/benchmark/dti/` the `train.json`, `valid.json`, and `test.json` files from https://cloud.tsinghua.edu.cn/d/c9651d22d3f94fb7a4f8/. Then, run the `convert_dti2opennre.sh` file in `/convert2opennre`.
+
+## Pretrain
+Data and pretrain files can be manually downloaded by running scripts in the ``benchmark`` and ``pretrain`` folders. For example, if you want to download FewRel dataset, you can run
 
 ```bash
 bash benchmark/download_fewrel.sh
@@ -66,10 +75,6 @@ For now, we have the following available models:
 * `wiki80_bertentity_softmax`: trained on `wiki80` dataset with a BERT encoder (using entity representation concatenation).
 * `tacred_bert_softmax`: trained on `TACRED` dataset with a BERT encoder.
 * `tacred_bertentity_softmax`: trained on `TACRED` dataset with a BERT encoder (using entity representation concatenation).
-
-## Datasets 
-
-You can go into the `benchmark` folder and download datasets using our scripts. We also list some of the information about the datasets in [this document](https://opennre-docs.readthedocs.io/en/latest/get_started/benchmark.html#bag-level-relation-extraction). 
 
 ## Training
 
@@ -114,7 +119,7 @@ If you use or extend our work, please cite the following papers:
 ```
 
 ```
-@article{hong_etal-2020-bere,
+@article{hong-etal-2020-bere,
     title = "A novel machine learning framework for automated biomedical relation extraction from large-scale literature repositories",
     author = "L. Hong and J. Lin and S. Li and F. Wan and H. Yang and T. Jiang and D. Zhao and J. Zeng",
     journal = "Nature Machine Intelligence",
