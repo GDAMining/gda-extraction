@@ -46,7 +46,7 @@ Then, run the `convert_dti2opennre.sh` file in `/convert2opennre`.
 
 ## Dataset Statistics
 
-Users can compute datasets statistics to understand the differences between datasets. For instance, if a user wants to compute statistics for GDAb, they can run
+Users can compute dataset statistics to understand the differences between datasets. For instance, if a user wants to compute statistics for GDAb, they can run
 
 ```bash
 python data_stats.py --benchmark_fpath ./benchmark/GDAb
