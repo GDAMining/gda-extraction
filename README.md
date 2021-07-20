@@ -44,15 +44,31 @@ Then, run the `convert_biorel2opennre.sh` file in `/convert2opennre`.
 Download in `/benchmark/dti/` the `train.json`, `valid.json`, and `test.json` files from https://cloud.tsinghua.edu.cn/d/c9651d22d3f94fb7a4f8/. <br />
 Then, run the `convert_dti2opennre.sh` file in `/convert2opennre`.
 
+## Dataset Statistics
+
+Users can compute datasets statistics to understand the differences between datasets. For instance, if a user wants to compute statistics for GDAb, they can run
+
+```
+python data_stats.py --benchmark_fpath ./benchmark/GDAb
+```
+
 ## Pretrain
-Data and pretrain files can be manually downloaded by running scripts in the ``benchmark`` and ``pretrain`` folders. For example, if you want to download FewRel dataset, you can run
+Pretrained embeddings can be downloaded by running scripts in the ``pretrain`` folders. For instance, if a user wants to download BioWordVec embeddings, they can run
 
 ```bash
-bash benchmark/download_fewrel.sh
+cd ./pretrain
+bash download_biowordvec.sh
+```
+
+Once downloaded, pretrained embeddings can be tailored to the considered dataset. For instance, if a user wants to experiment with GDAb, they can run
+
+```
+python prepare_embeddings.py --embs_fpath ./pretrain/biowordvec/ --benchmark_fpath ./benchmark/GDAb/
 ```
 
 ## Training
 
+Users can train the provided models on the 
 You can train your own models on your own data with OpenNRE. In `example` folder we give example training codes for supervised RE models and bag-level RE models. You can either use our provided datasets or your own datasets. For example, you can use the following script to train a PCNN-ATT bag-level model on the NYT10 dataset with manual test set:
 ```bash
 python example/train_bag_cnn.py \
@@ -79,12 +95,24 @@ We provide many options in the example training code and you can check them out 
 
 ## Cite
 
-If you use or extend our work, please cite the following papers:
+If you use or extend our work, please cite the following:
+
+```
+@dataset{marchesin-silvello-2021-gda,
+  title = "From Nanopublications to Large-Scale Gene-Disease Association Datasets for Biomedical Relation Extraction",
+  author = "S. Marchesin and G. Silvello",
+  publisher = "Zenodo",
+  year = "2021",
+  version = "1.0",
+  url = "https://doi.org/10.5281/zenodo.5113853",
+  doi = "10.5281/zenodo.5113853"
+}
+```
 
 ```
 @inproceedings{han-etal-2019-opennre,
     title = "{O}pen{NRE}: An Open and Extensible Toolkit for Neural Relation Extraction",
-    author = "Han, Xu and Gao, Tianyu and Yao, Yuan and Ye, Deming and Liu, Zhiyuan and Sun, Maosong",
+    author = "X. Han and T. Gao and Y. Yao and D. Ye and Z. Liu and M. Sun",
     booktitle = "Proceedings of EMNLP-IJCNLP: System Demonstrations",
     year = "2019",
     url = "https://www.aclweb.org/anthology/D19-3029",
@@ -92,6 +120,8 @@ If you use or extend our work, please cite the following papers:
     pages = "169--174"
 }
 ```
+
+If you use the BERE RE model or the DTI dataset, please cite the following:
 
 ```
 @article{hong-etal-2020-bere,
@@ -103,5 +133,21 @@ If you use or extend our work, please cite the following papers:
     doi = "10.1038/s42256-020-0189-y",
     volume = "2",
     pages = "347--355"	
+}
+```
+
+If you use the BioRel dataset, please cite the following:
+
+```
+@article{xing-etal-2020-biorel,
+  title     = "BioRel: towards large-scale biomedical relation extraction",
+  author    = "R. Xing and J. Luo and T. Song",
+  journal   = "BMC Bioinformatics",
+  year      = "2020",
+  url = "https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-03889-5",
+  doi = "10.1186/s12859-020-03889-5",
+  volume    = "21-S",
+  number    = "16",
+  pages     = "543"
 }
 ```
