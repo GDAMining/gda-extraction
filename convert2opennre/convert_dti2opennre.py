@@ -51,5 +51,5 @@ with open(parent_dir + '/benchmark/dti/dti_test.txt', 'w') as ttout:
         json.dump(instance, ttout)
         ttout.write('\n')
 
-with open(parent_dir + '/benchmark/dti/dit_rel2id.json', 'w') as rel2out:
+with open(parent_dir + '/benchmark/dti/dti_rel2id.json', 'w') as rel2out:
     json.dump({"NA": 0, "substrate": 1, "inhibitor": 2, "agonist": 3, "unknown": 4, "other": 5}, rel2out)
