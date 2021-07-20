@@ -68,7 +68,7 @@ python prepare_embeddings.py --embs_fpath ./pretrain/biowordvec/ --benchmark_fpa
 
 ## Training
 
-Users can train the provided models on the 
+Users can train RE models on GDAb and GDAt datasets using ````
 You can train your own models on your own data with OpenNRE. In `example` folder we give example training codes for supervised RE models and bag-level RE models. You can either use our provided datasets or your own datasets. For example, you can use the following script to train a PCNN-ATT bag-level model on the NYT10 dataset with manual test set:
 ```bash
 python example/train_bag_cnn.py \
