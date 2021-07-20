@@ -39,7 +39,7 @@ def main():
     # get benchmark name
     benchmark = FLAGS.benchmark_fpath.split('/')[-2]
     # get embeddings name 
-    embs_name = FLAGS.embs_fpath.split('/')[-2]
+    embs_name = FLAGS.embs_fpath.split('/')[-2] + '.bin'
     # read training, validation and test sets
     print('Reading training, validation, and test sets...')
     dataset = []
