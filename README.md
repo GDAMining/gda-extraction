@@ -111,13 +111,13 @@ If you use or extend our work, please cite the following:
 
 ```
 @inproceedings{han-etal-2019-opennre,
-    title = "{O}pen{NRE}: An Open and Extensible Toolkit for Neural Relation Extraction",
-    author = "X. Han and T. Gao and Y. Yao and D. Ye and Z. Liu and M. Sun",
-    booktitle = "Proceedings of EMNLP-IJCNLP: System Demonstrations",
-    year = "2019",
-    url = "https://www.aclweb.org/anthology/D19-3029",
-    doi = "10.18653/v1/D19-3029",
-    pages = "169--174"
+  title = "{O}pen{NRE}: An Open and Extensible Toolkit for Neural Relation Extraction",
+  author = "X. Han and T. Gao and Y. Yao and D. Ye and Z. Liu and M. Sun",
+  booktitle = "Proceedings of EMNLP-IJCNLP: System Demonstrations",
+  year = "2019",
+  url = "https://www.aclweb.org/anthology/D19-3029",
+  doi = "10.18653/v1/D19-3029",
+  pages = "169--174"
 }
 ```
 
@@ -125,14 +125,14 @@ If you use the BERE RE model or the DTI dataset, please cite the following:
 
 ```
 @article{hong-etal-2020-bere,
-    title = "A novel machine learning framework for automated biomedical relation extraction from large-scale literature repositories",
-    author = "L. Hong and J. Lin and S. Li and F. Wan and H. Yang and T. Jiang and D. Zhao and J. Zeng",
-    journal = "Nature Machine Intelligence",
-    year = "2020",
-    url = "https://www.nature.com/articles/s42256-020-0189-y",
-    doi = "10.1038/s42256-020-0189-y",
-    volume = "2",
-    pages = "347--355"	
+  title = "A novel machine learning framework for automated biomedical relation extraction from large-scale literature repositories",
+  author = "L. Hong and J. Lin and S. Li and F. Wan and H. Yang and T. Jiang and D. Zhao and J. Zeng",
+  journal = "Nature Machine Intelligence",
+  year = "2020",
+  url = "https://www.nature.com/articles/s42256-020-0189-y",
+  doi = "10.1038/s42256-020-0189-y",
+  volume = "2",
+  pages = "347--355"	
 }
 ```
 
