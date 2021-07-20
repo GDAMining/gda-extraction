@@ -1,8 +1,8 @@
 import json
 
-from pathlib import Path
+from os.path import dirname, abspath
 
-parent_dir = Path(__file__).parent
+parent_dir = dirname(dirname(abspath(__file__)))
 with open(parent_dir + '/benchmark/dti/train.json', 'r') as trf:
     train = json.load(trf)
 
