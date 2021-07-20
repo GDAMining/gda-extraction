@@ -78,7 +78,7 @@ python train_cnn.py \
     --optim sgd \
     --lr 0.2 \
     --batch_size 64 \
-    --max_epoch 20 \
+    --max_epoch 20
 ```
 
 Results are reported in terms of Area Under the Precision-Recall Curve (AUPRC) and (micro) F1 score.
