@@ -23,9 +23,10 @@ cd ./OpenNRE
 python setup.py install 
 ```
 
-If users also want to modify the code, run this:
+If users also want to modify the code, run this instead:
 ```
 cd ./OpenNRE
+python setup.py install
 python setup.py develop
 ```
 
