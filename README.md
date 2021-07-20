@@ -49,38 +49,6 @@ Data and pretrain files can be manually downloaded by running scripts in the ``b
 bash benchmark/download_fewrel.sh
 ```
 
-## Easy Start
-
-Make sure you have installed OpenNRE as instructed above. Then import our package and load pre-trained models.
-
-```python
->>> import opennre
->>> model = opennre.get_model('wiki80_cnn_softmax')
-```
-
-Note that it may take a few minutes to download checkpoint and data for the first time. Then use `infer` to do sentence-level relation extraction
-
-```python
->>> model.infer({'text': 'He was the son of Máel Dúin mac Máele Fithrich, and grandson of the high king Áed Uaridnach (died 612).', 'h': {'pos': (18, 46)}, 't': {'pos': (78, 91)}})
-('father', 0.5108704566955566)
-```
-
-You will get the relation result and its confidence score.
-
-If you want to use the model on your GPU, just run 
-```python
->>> model = model.cuda()
-```
-before calling the inference function.
-
-For now, we have the following available models:
-
-* `wiki80_cnn_softmax`: trained on `wiki80` dataset with a CNN encoder.
-* `wiki80_bert_softmax`: trained on `wiki80` dataset with a BERT encoder.
-* `wiki80_bertentity_softmax`: trained on `wiki80` dataset with a BERT encoder (using entity representation concatenation).
-* `tacred_bert_softmax`: trained on `TACRED` dataset with a BERT encoder.
-* `tacred_bertentity_softmax`: trained on `TACRED` dataset with a BERT encoder (using entity representation concatenation).
-
 ## Training
 
 You can train your own models on your own data with OpenNRE. In `example` folder we give example training codes for supervised RE models and bag-level RE models. You can either use our provided datasets or your own datasets. For example, you can use the following script to train a PCNN-ATT bag-level model on the NYT10 dataset with manual test set:
