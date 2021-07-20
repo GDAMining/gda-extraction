@@ -116,13 +116,12 @@ If you use or extend our work, please cite the following papers:
 ```
 @article{hong_etal-2020-bere,
     title = "A novel machine learning framework for automated biomedical relation extraction from large-scale literature repositories",
-	author = "L. Hong and J. Lin and S. Li and F. Wan and H. Yang and T. Jiang and D. Zhao and J. Zeng},
-	journal = "Nature Machine Intelligence",
+    author = "L. Hong and J. Lin and S. Li and F. Wan and H. Yang and T. Jiang and D. Zhao and J. Zeng",
+    journal = "Nature Machine Intelligence",
     year = "2020",
     url = "https://www.nature.com/articles/s42256-020-0189-y",
     doi = "10.1038/s42256-020-0189-y",
-	volume = "2",
-	pages = "347--355",
-	
+    volume = "2",
+    pages = "347--355"	
 }
 ```
