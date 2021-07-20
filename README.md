@@ -11,20 +11,20 @@ git clone https://github.com/NanoGDA/gda-extraction.git
 
 Then install all the requirements:
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
 **Note**: Please choose appropriate PyTorch version based on your machine (related to your CUDA version). For details, refer to https://pytorch.org/. 
 
 Then install the OpenNRE package with 
-```
+```bash
 cd ./OpenNRE
 python setup.py install 
 ```
 
 If users also want to modify the code, run this instead:
-```
+```bash
 cd ./OpenNRE
 python setup.py install
 python setup.py develop
@@ -48,50 +48,40 @@ Then, run the `convert_dti2opennre.sh` file in `/convert2opennre`.
 
 Users can compute datasets statistics to understand the differences between datasets. For instance, if a user wants to compute statistics for GDAb, they can run
 
-```
+```bash
 python data_stats.py --benchmark_fpath ./benchmark/GDAb
 ```
 
 ## Pretrain
-Pretrained embeddings can be downloaded by running scripts in the ``pretrain`` folders. For instance, if a user wants to download BioWordVec embeddings, they can run
+Pretrained embeddings can be downloaded by running scripts in the ``pretrain`` folder. For instance, if a user wants to download BioWordVec embeddings, they can run
 
 ```bash
 cd ./pretrain
 bash download_biowordvec.sh
 ```
 
-Once downloaded, pretrained embeddings can be tailored to the considered dataset. For instance, if a user wants to experiment with GDAb, they can run
+Once downloaded, pretrained embeddings need to be tailored to the considered dataset. For instance, if a user wants to experiment with GDAb, they have to run
 
-```
+```bash
 python prepare_embeddings.py --embs_fpath ./pretrain/biowordvec/ --benchmark_fpath ./benchmark/GDAb/
 ```
 
 ## Training
 
-Users can train RE models on GDAb and GDAt datasets using ````
-You can train your own models on your own data with OpenNRE. In `example` folder we give example training codes for supervised RE models and bag-level RE models. You can either use our provided datasets or your own datasets. For example, you can use the following script to train a PCNN-ATT bag-level model on the NYT10 dataset with manual test set:
+Users can train RE models on the provided datasets using ``train_model.py``, where ``model`` can be CNN, PCNN, BiGRU, BiGRU-ATT, or BERE. For instance, a user can run the following script to train and test the CNN (AVE) bag-level model on the GDAb dataset:
 ```bash
-python example/train_bag_cnn.py \
+python train_cnn.py \
     --metric auc \
-    --dataset nyt10m \
-    --batch_size 160 \
-    --lr 0.1 \
-    --weight_decay 1e-5 \
-    --max_epoch 100 \
-    --max_length 128 \
-    --seed 42 \
-    --encoder pcnn \
-    --aggr att
+    --dataset GDAb \
+    --bag_strategy ave \
+    --hidden_size 250 \
+    --optim sgd \
+    --lr 0.2 \
+    --batch_size 64 \
+    --max_epoch 20 \
 ```
 
-Or use the following script to train a BERT model on the Wiki80 dataset:
-```bash
-python example/train_supervised_bert.py \
-    --pretrain_path bert-base-uncased \
-    --dataset wiki80
-```
-
-We provide many options in the example training code and you can check them out for detailed instructions.
+Results are reported in terms of Area Under the Precision-Recall Curve (AUPRC) or (micro) F1 score.
 
 ## Cite
 
