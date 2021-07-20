@@ -75,7 +75,7 @@ python example/train_supervised_bert.py \
 
 We provide many options in the example training code and you can check them out for detailed instructions.
 
-## How to Cite
+## Cite
 
 If you use or extend our work, please cite the following papers:
 
