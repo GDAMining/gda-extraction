@@ -38,8 +38,8 @@ def tokenize(text):
 def main():
     # get benchmark name
     benchmark = FLAGS.benchmark_fpath.split('/')[-2]
-    # get embeddings name 
-    embs_name = FLAGS.embs_fpath.split('/')[-2] + '.bin'
+    # get embeddings filename 
+    embs_fname = FLAGS.embs_fpath.split('/')[-2] + '.bin'
     # read training, validation and test sets
     print('Reading training, validation, and test sets...')
     dataset = []
@@ -58,7 +58,7 @@ def main():
 
     # get word2vec model stored in C *binary* format
     print('Loading word2vec...')
-    word2vec = KeyedVectors.load_word2vec_format(FLAGS.embs_fpath + embs_name, binary=True)
+    word2vec = KeyedVectors.load_word2vec_format(FLAGS.embs_fpath + embs_fname, binary=True)
     print('Word2vec loaded!')
 
     # restrict word embeddings to words contained within dataset
@@ -81,6 +81,8 @@ def main():
     # create benchmark-dependent dir if not exists
     if not os.path.exists(FLAGS.embs_fpath + benchmark + '/'):
         os.makedirs(FLAGS.embs_fpath + benchmark + '/')
+    # get embeddings name
+    embs_name = embs_fname.split('.')[0]
     # store word to index dict and pre-trained vectors
     with open(FLAGS.embs_fpath + benchmark + '/' + embs_name + '_word2id.json', 'w') as dout:
         json.dump(word2ix, dout)
