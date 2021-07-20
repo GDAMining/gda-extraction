@@ -81,7 +81,7 @@ python train_cnn.py \
     --max_epoch 20
 ```
 
-BioWordVec pretrained embeddings (obtained from ``download_biowordvec.sh``) are used to train RE models on GDAb, GDAt, and BioRel. BioWord2Vec pretrained embeddings (obtained from ``download_biow2v.sh``) are required to train RE models on DTI. Results are reported in terms of Area Under the Precision-Recall Curve (AUPRC) and (micro) F1 score.
+BioWordVec pretrained embeddings (obtained from ``download_biowordvec.sh``) are used to train RE models on GDAb, GDAt, and BioRel. Biomedical Word2Vec pretrained embeddings (obtained from ``download_biow2v.sh``) are required to train RE models on DTI. Results are reported in terms of Area Under the Precision-Recall Curve (AUPRC) and (micro) F1 score.
 
 ## Cite
 
