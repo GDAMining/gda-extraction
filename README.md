@@ -32,7 +32,9 @@ python setup.py develop
 
 ## Datasets 
 
-Users can go into the `benchmark` folder and download GDAb and GDAt datasets using the script `download_GDA_datasets.sh`. If interested in running models on BioRel and DTI, users can download and store these datasets as follows.
+Users can go into the `benchmark` folder and download <b>GDAb</b> and <b>GDAt</b> datasets using the script `download_GDA_datasets.sh`. 
+
+If interested in running models on BioRel and DTI, users can download and store these datasets as follows.
 
 <b>BioRel</b>: <br />
 Download in `/benchmark/biorel/` the `train.json`, `dev.json`, `test.json`, and `relation2id.json` files from https://bit.ly/biorel_dataset. <br />
