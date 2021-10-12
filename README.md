@@ -89,7 +89,7 @@ If you use or extend our work, please cite the following:
 
 ```
 @dataset{marchesin-silvello-2021-gda,
-  title = "From Nanopublications to Large-Scale Gene-Disease Association Datasets for Biomedical Relation Extraction",
+  title = "Building Large-Scale Gene-Disease Association Datasets for Biomedical Relation Extraction",
   author = "S. Marchesin and G. Silvello",
   publisher = "Zenodo",
   year = "2021",
