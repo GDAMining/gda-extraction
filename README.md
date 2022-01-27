@@ -1,12 +1,12 @@
 # GDA Extraction
-This repository contains the source code to train and test Biomedical Relation Extraction (BioRE) models on GDAb and GDAt datasets. GDAb and GDAt are large-scale, distantly supervised, and manually enhanced datasets for Gene-Disease Association (GDA) extraction. In addition, the repository contains scripts to compute dataset statistics and to convert other BioRE datasets in the required format. <br /> GDAb and GDAt datasets are available at: http://doi.org/10.5281/zenodo.5113853.
+This repository contains the source code to train and test Biomedical Relation Extraction (BioRE) models on the TBGA dataset. TBGA is a large-scale, semi-automatically annotated dataset for Gene-Disease Association (GDA) extraction. In addition, the repository contains scripts to compute dataset statistics and to convert other BioRE datasets in the required format. <br /> TBGA is available at: https://doi.org/10.5281/zenodo.5911097.
 
 ### Usage
 
 Clone this repository
 
 ```bash
-git clone https://github.com/NanoGDA/gda-extraction.git
+git clone https://github.com/GDAMining/gda-extraction.git
 ```
 
 Then install all the requirements:
@@ -32,7 +32,7 @@ python setup.py develop
 
 ## Datasets 
 
-Users can go into the `benchmark` folder and download <b>GDAb</b> and <b>GDAt</b> datasets using the script `download_GDA_datasets.sh`. 
+Users can go into the `benchmark` folder and download <b>TBGA</b> using the script `download_TBGA_dataset.sh`. 
 
 If interested in running models on BioRel and DTI, users can download and store these datasets as follows.
 
@@ -46,10 +46,10 @@ Then, run the `convert_dti2opennre.sh` file in `/convert2opennre`.
 
 ## Dataset Statistics
 
-Users can compute dataset statistics to understand the differences between datasets. For instance, if a user wants to compute statistics for GDAb, they can run
+Users can compute dataset statistics to understand the differences between datasets. For instance, if a user wants to compute statistics for TBGA, they can run
 
 ```bash
-python data_stats.py --benchmark_fpath ./benchmark/GDAb/
+python data_stats.py --benchmark_fpath ./benchmark/TBGA/
 ```
 
 ## Pretrain
@@ -60,19 +60,19 @@ cd ./pretrain
 bash download_biowordvec.sh
 ```
 
-Once downloaded, pretrained embeddings need to be tailored to the considered dataset. For instance, if a user wants to experiment with GDAb, they have to run
+Once downloaded, pretrained embeddings need to be tailored to the considered dataset. For instance, if a user wants to experiment with TBGA, they have to run
 
 ```bash
-python prepare_embeddings.py --embs_fpath ./pretrain/biowordvec/ --benchmark_fpath ./benchmark/GDAb/
+python prepare_embeddings.py --embs_fpath ./pretrain/biowordvec/ --benchmark_fpath ./benchmark/TBGA/
 ```
 
 ## Training
 
-Users can train RE models on the provided datasets using ``train_model.py``, where ``model`` can be CNN, PCNN, BiGRU, BiGRU-ATT, or BERE. For instance, a user can run the following script to train and test the CNN (AVE) bag-level model on the GDAb dataset:
+Users can train RE models on the provided datasets using ``train_model.py``, where ``model`` can be CNN, PCNN, BiGRU, BiGRU-ATT, or BERE. For instance, a user can run the following script to train and test the CNN (AVE) bag-level model on the TBGA dataset:
 ```bash
 python train_cnn.py \
     --metric auc \
-    --dataset GDAb \
+    --dataset TBGA \
     --bag_strategy ave \
     --hidden_size 250 \
     --optim sgd \
@@ -81,21 +81,21 @@ python train_cnn.py \
     --max_epoch 20
 ```
 
-BioWordVec pretrained embeddings (obtained from ``download_biowordvec.sh``) are used to train RE models on GDAb, GDAt, and BioRel. Biomedical Word2Vec pretrained embeddings (obtained from ``download_biow2v.sh``) are required to train RE models on DTI. Results are reported in terms of Area Under the Precision-Recall Curve (AUPRC) and (micro) F1 score.
+BioWordVec pretrained embeddings (obtained from ``download_biowordvec.sh``) are used to train RE models on TBGA and BioRel. Biomedical Word2Vec pretrained embeddings (obtained from ``download_biow2v.sh``) are required to train RE models on DTI. Results are reported in terms of Area Under the Precision-Recall Curve (AUPRC) and (micro) F1 score.
 
 ## Cite
 
 If you use or extend our work, please cite the following:
 
 ```
-@dataset{marchesin-silvello-2021-gda,
-  title = "Building Large-Scale Gene-Disease Association Datasets for Biomedical Relation Extraction",
+@dataset{marchesin-silvello-2022-gda,
+  title = "TBGA: A Large-Scale Gene-Disease Association Dataset for Biomedical Relation Extraction",
   author = "S. Marchesin and G. Silvello",
   publisher = "Zenodo",
-  year = "2021",
+  year = "2022",
   version = "1.0",
-  url = "https://doi.org/10.5281/zenodo.5113853",
-  doi = "10.5281/zenodo.5113853"
+  url = "https://doi.org/10.5281/zenodo.5911097",
+  doi = "10.5281/zenodo.5911097"
 }
 ```
 
