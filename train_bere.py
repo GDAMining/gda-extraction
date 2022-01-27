@@ -23,7 +23,7 @@ parser.add_argument('--only_test', action='store_true', help='Only run test.')
 
 # data
 parser.add_argument('--metric', default='auc', choices=['micro_f1', 'auc'], help='Metric for picking up best checkpoint.')
-parser.add_argument('--dataset', default='', choices=['dti', 'biorel', 'GDAb', 'GDAt'], help='Dataset. If not none, the following args can be ignored.')
+parser.add_argument('--dataset', default='', choices=['dti', 'biorel', 'TBGA'], help='Dataset. If not none, the following args can be ignored.')
 parser.add_argument('--train_file', default='', type=str, help='Training data file.')
 parser.add_argument('--val_file', default='', type=str, help='Validation data file.')
 parser.add_argument('--test_file', default='', type=str, help='Test data file.')
