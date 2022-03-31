@@ -88,6 +88,20 @@ BioWordVec pretrained embeddings (obtained from ``download_biowordvec.sh``) are 
 If you use or extend our work, please cite the following:
 
 ```
+@article{marchesin-silvello-2022,
+  title = "TBGA: a large-scale Gene-Disease Association dataset for Biomedical Relation Extraction",
+  author = "S. Marchesin and G. Silvello",
+  journal = "BMC Bioinformatics",
+  year = "2022",
+  url = "https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-022-04646-6",
+  doi = "10.1186/s12859-022-04646-6",
+  volume = "23",
+  number = "1",
+  pages = "111"
+}
+```
+
+```
 @dataset{marchesin-silvello-2022-gda,
   title = "TBGA: A Large-Scale Gene-Disease Association Dataset for Biomedical Relation Extraction",
   author = "S. Marchesin and G. Silvello",
