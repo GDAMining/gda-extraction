@@ -1,5 +1,5 @@
 # GDA Extraction
-This repository contains the source code to train and test Biomedical Relation Extraction (BioRE) models on the TBGA dataset. TBGA is a large-scale, semi-automatically annotated dataset for Gene-Disease Association (GDA) extraction. In addition, the repository contains scripts to compute dataset statistics and to convert other BioRE datasets in the required format. <br /> TBGA is available at: https://doi.org/10.5281/zenodo.5911097.
+This repository contains the source code to train and test Biomedical Relation Extraction (BioRE) models on the TBGA dataset. TBGA is a large-scale, semi-automatically annotated dataset for Gene-Disease Association (GDA) extraction. In addition, the repository contains scripts to compute dataset statistics and to convert other BioRE datasets in the required format. <br /> TBGA is available at: https://doi.org/10.5281/zenodo.5911097. <br />  TBGA paper can be found at: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-022-04646-6
 
 ### Usage
 
